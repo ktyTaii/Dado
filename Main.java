@@ -36,7 +36,7 @@ public class Main extends JFrame {
         ladosInput = new JTextField("6", 5);
         ladosInput.setFont(new Font("Arial", Font.PLAIN, 16));
 
-        rolarButton = new JButton("Gerar Número");
+        rolarButton = new JButton("Girar o dado");
         rolarButton.setFont(new Font("Arial", Font.PLAIN, 16));
 
         rolarButton.addActionListener(e -> {
@@ -44,7 +44,7 @@ public class Main extends JFrame {
                 int lados = Integer.parseInt(ladosInput.getText());
 
                 if (lados < 2) {
-                    resultadoLabel.setText("Mínimo permitido: 2 lados");
+                    resultadoLabel.setText("Deve ter no mínimo 2 lados");
                     historicoArea.setText("Número anterior:\nSem número anterior");
                     numeroAnterior = null;
                     return;
@@ -53,7 +53,7 @@ public class Main extends JFrame {
                 int numeroAtual = random.nextInt(lados) + 1;
 
                 atualizarHistorico();
-                resultadoLabel.setText("Você gerou: " + numeroAtual);
+                resultadoLabel.setText("Seu número é: " + numeroAtual);
 
                 if (numeroAtual == lados) {
                     iniciarArcoIris();
@@ -71,7 +71,7 @@ public class Main extends JFrame {
         });
 
         JPanel painelSuperior = new JPanel(new FlowLayout());
-        painelSuperior.add(new JLabel("Lados do número:"));
+        painelSuperior.add(new JLabel("Lados:"));
         painelSuperior.add(ladosInput);
         painelSuperior.add(rolarButton);
 
