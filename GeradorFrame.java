@@ -7,21 +7,21 @@ import java.util.Random;
 
 public class GeradorFrame extends JFrame {
 
-    private JLabel resultadoLabel;
-    private JLabel parabensLabel;
-    private JTextArea historicoArea;
-    private JButton rolarButton;
-    private JTextField ladosInput;
-    private Random random;
-    private Integer numeroAnterior = null;
-    private ConfetePanel confetePanel;
+    private JLabel resultadoLabel;     // Exibe o número gerado
+    private JLabel parabensLabel;      // Mensagem de parabéns com efeito visual
+    private JTextArea historicoArea;   // Mostra o número anterior
+    private JButton rolarButton;       // Botão para gerar número
+    private JTextField ladosInput;     // Escolher o número de lados
+    private Random random;             // Gerador de números aleatórios
+    private Integer numeroAnterior = null; // Armazena o número anterior
+    private ConfetePanel confetePanel;     // Painel para desenhar confetes
 
     public GeradorFrame() {
         super("Gerador de Número");
 
         random = new Random();
 
-        resultadoLabel = new JLabel("Escolha os lados e gere um número", SwingConstants.CENTER);
+        resultadoLabel = new JLabel("Escolha o número lados e gere um número", SwingConstants.CENTER);
         resultadoLabel.setFont(new Font("Arial", Font.BOLD, 20));
 
         parabensLabel = new JLabel("Parabéns!", SwingConstants.CENTER);
